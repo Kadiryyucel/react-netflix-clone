@@ -1,0 +1,169 @@
+.wrapper{
+    display: flex;
+    padding: 0 60px;
+    color: white;
+    position: fixed;
+    width: 90vw;
+    background-image:linear-gradient(180deg, rgba(0,0,0,.7) 10%,transparent) !important;
+    transition: background-color 0.4s ease-in-out;
+}
+.logo{
+    position: relative;
+    flex-grow: 0.2;
+    background-size: 100% 100%;
+}
+.menu ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+.menu ul li {
+    padding: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.menu ul li:first-child {
+    font-weight: bold;
+}
+.secondry-menu{
+    display: flex;
+    align-items: center;
+}
+.secondry-menu > div:not(:last-child){
+    margin-right: 15px;
+}
+.secondry-menu > div{
+    padding:0 2px;
+    cursor: pointer;
+}
+.operation{
+    display: flex;
+    flex-grow: 0.9;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.person-menu{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.person-menu img{
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 4px !important;
+}
+.person-menu > i{
+    transition: transform 0.4s;
+}
+.person-menu ul{
+    list-style-type: none;
+    padding: 0;
+}
+.person-menu ul li{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-size: 12px;
+}
+.person-menu ul li span{
+    padding-left: 8px;
+}
+.person-menu ul li i{
+    margin-left: 4px;
+    font-size: 20px;
+}
+.person-menu ul li img{
+    width: 28px;
+    height: 28px;
+}
+.person-menu:hover div{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 10px;
+}
+.person-menu:hover >i{
+    transform: rotate(180deg);
+}
+.person-menu:hover ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.person-menu div{
+    visibility: hidden;
+    opacity: 0;
+    width:200px;
+    right: calc(100% - 52px);
+    top:40px;
+    padding: 0;
+    margin: 0px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.88);
+    color: #c4c0c0;
+    transition: all 0.4s;
+}
+.person-menu div > i{
+    position: absolute;
+    color: white;
+    right: 18px;
+    bottom: 209.6px;
+    font-size: 26px;
+}
+.user{
+    font-size: 12px;
+}
+.lo{
+    height: 2000px;
+}
+
+.onScroll{
+    background-color:black
+}
+.search:hover{
+    transform: scale(1.2);
+}
+
+.search-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search-clone{
+    display: flex;
+    background: black;
+    padding: 4px !important;
+    margin-right: 0px !important;
+}
+.search-clone > i {
+    transition: transform 0.3s;
+}
+.search-input{
+    border: 0px;
+    width: 100%;
+    padding: 4px !important;
+    background: black;
+    color: white;
+}
+.real-search{
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 200px !important;
+    border: 1px solid white;
+}
+.real-search i{
+    font-size: 20px;
+}
+.hidden-real-search{
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    width: 25px;
+    position: absolute;
+    right: 0px;
+    transition: right 0.6s,width 0.98s,visibility 0s,opacity 0s;
+}
+input:focus{
+    border: none !important;
+    outline: none !important;
+}
