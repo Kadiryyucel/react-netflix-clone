@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import MoviesService from "../../services/MoviesService";
 import "./style.scss"
 
-import Skeloton from "../../components/skeloton";
+import Skeloton from "../../components/moviesSkeloton";
 
 
 function Movies() {
