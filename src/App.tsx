@@ -1,7 +1,7 @@
 
 import './App.css';
 import Header from "./header/Header";
-import Home from "./modules/home/index"
+import Home from "./modules/home"
 
 function App() {
   return (

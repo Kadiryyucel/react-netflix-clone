@@ -1,7 +1,10 @@
-import "./Style.css"
-import logo from "../assets/net.png"
-import user from "../assets/kado.png"
 import {useEffect, useState, useRef} from "react";
+import "./Style.css";
+
+const logo = require("../assets/net.png")
+const user =require("../assets/kado.png")
+
+
 
 function Header() {
     let menu = ["Ana sayfa", "Diziler", "Filmler", "Yeni ve Popüler", "Listem", "Dile Göre Göz At"]
@@ -12,7 +15,9 @@ function Header() {
         {ico: "ri-user-line", text: "Hesap"},
         {ico: "ri-question-line", text: "Yardım Merkezi"}];
 
-    function getScroll(e) {
+
+    const [checkScrollTop, setScroll] = useState<number>();
+    function getScroll() {
         if (window.scrollY === 0) {
             setScroll(window.scrollY)
         } else {
@@ -21,32 +26,31 @@ function Header() {
     }
 
 
-    const [search, setSearch] = useState(false);
+    const [search, setSearch] = useState<boolean>(false);
 
-    function filter(e) {
+    function filter(e:any) {
         setSearch(true);
         e.stopPropagation()
     }
 
-    const focusSearch = useRef();
+    const focusSearch = useRef<HTMLDivElement>(null);
 
-    function goBackSearch(e) {
+    function goBackSearch(e:any) {
         let el = focusSearch.current
-        if (!el.contains(e.target) && el !== e.target) {
+        if (el && !el.contains(e?.target) && el !== e?.target) {
             setSearch(false)
         }
     }
 
-    const searchInput = useRef();
+    const searchInput = useRef<HTMLInputElement>(null);
     useEffect(() => {
-        if (search) {
-            searchInput.current.focus();
+        if (searchInput && search) {
+            searchInput?.current?.focus();
             document.body.addEventListener("click", goBackSearch)
         }
         return () => document.body.removeEventListener("click", goBackSearch);
     }, [search])
 
-    const [checkScrollTop, setScroll] = useState(false);
     useEffect(() => {
         window.addEventListener("scroll", getScroll)
         return () => window.removeEventListener("scroll", getScroll)
