@@ -20,7 +20,7 @@ function Movies() {
     }, [])
 
 
-    return (loading ? <Skeloton/> : (<div className="movies">{movies.map((movie, i) => {
+    return (true ? <Skeloton/> : (<div className="movies">{movies.map((movie, i) => {
                 return (movie.backdrop_path?<div className="movie" key={i}>
                     <img src={'https://image.tmdb.org/t/p/original'+movie.backdrop_path}/>
                     <div className='info'><h4 style={{margin:'0px'}}>selam</h4><p>lol alkjald aldjlahda lkajdlkfjad ajdlkajdlksjf adllfjalkkdjf</p></div>

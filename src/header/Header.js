@@ -1,7 +1,6 @@
 import "./Style.css"
 import logo from "../assets/net.png"
 import user from "../assets/kado.png"
-import Skeloton from "../components/Skeloton";
 import {useEffect, useState, useRef} from "react";
 
 function Header() {
@@ -90,8 +89,7 @@ function Header() {
                             </div>
                         </div>
                     </div>
-                </div><Skeloton />
-                <div className="lo"></div>
+                </div>
         </>
     );
 }
