@@ -2,23 +2,23 @@ import {useEffect, useRef, useState} from "react";
 import "./style.scss"
 function Index() {
 
-    const movies = useRef()
-    const [count, setCount] = useState(0)
-    const interval = useRef(null)
+    const movies = useRef<HTMLDivElement>(null)
+    const [count, setCount] = useState<number>(0)
+    const putPerMovieElement = useRef<any>(null)
 
     useEffect(() => {
-        interval.current = setInterval(() => {
+        putPerMovieElement.current = setInterval(() => {
             setCount(x => x + 1)
             let div = document.createElement("div")
             div.className = "movie_skeloton";
-            movies.current.appendChild(div)
+            if(movies.current) movies.current.appendChild(div)
         }, 200);
-        return () => clearInterval(interval.current)
+        return () => clearInterval(putPerMovieElement.current)
     }, [])
 
     useEffect(() => {
         if (count > 10) {
-            clearInterval(interval.current)
+            clearInterval(putPerMovieElement.current)
         }
     }, [count])
 

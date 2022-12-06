@@ -3,7 +3,7 @@ import Api from "./index"
 const getAll = ()=>{
     return Api.get('/movie/popular')
 }
-const getMovieImg = (img)=>{
+const getMovieImg = (img:string)=>{
     Api.defaults.baseURL = 'https://image.tmdb.org/'
     Api.defaults.params = {}
     return Api.get('t/p/original'+img)
